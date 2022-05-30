@@ -9,6 +9,7 @@ public class AuthController {
 
     @PostMapping
     public MultiValueMap<String, Object> test(@RequestBody MultiValueMap<String, Object> data) {
+        System.out.println(data);
         return data;
     }
 }
