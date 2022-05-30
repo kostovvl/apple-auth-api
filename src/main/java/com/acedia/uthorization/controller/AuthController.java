@@ -1,5 +1,6 @@
 package com.acedia.uthorization.controller;
 
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     @PostMapping
-    public String test(@RequestHeader String code) {
-        return code;
+    public MultiValueMap<String, Object> test(@RequestBody MultiValueMap<String, Object> data) {
+        return data;
     }
 }
