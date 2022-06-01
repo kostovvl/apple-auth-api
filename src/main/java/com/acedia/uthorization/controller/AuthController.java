@@ -19,6 +19,8 @@ public class AuthController {
 
     @PostMapping("/validate-token")
     public String validateToken(@RequestBody MultiValueMap<String, String> values) throws IOException {
-        return authService.test(String.valueOf(values.get("code"))).toString();
+        String code = String.valueOf(values.get("code"));
+        System.out.println(code);
+        return authService.test(code).toString();
     }
 }
