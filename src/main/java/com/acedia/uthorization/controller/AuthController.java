@@ -1,6 +1,5 @@
 package com.acedia.uthorization.controller;
 
-import com.acedia.uthorization.auth.user.AppleAuthorizationToken;
 import com.acedia.uthorization.service.AuthService;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
@@ -19,7 +18,7 @@ public class AuthController {
     }
 
     @PostMapping("/validate-token")
-    public AppleAuthorizationToken validateToken(@RequestBody MultiValueMap<String, String> values) throws IOException {
-        return authService.test(String.valueOf(values.get("code")));
+    public String validateToken(@RequestBody MultiValueMap<String, String> values) throws IOException {
+        return authService.test(String.valueOf(values.get("code"))).toString();
     }
 }
