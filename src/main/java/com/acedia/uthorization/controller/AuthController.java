@@ -1,6 +1,6 @@
 package com.acedia.uthorization.controller;
 
-import com.accedia.apple.auth.user.AppleAuthorizationToken;
+import com.acedia.uthorization.auth.user.AppleAuthorizationToken;
 import com.acedia.uthorization.service.AuthService;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;

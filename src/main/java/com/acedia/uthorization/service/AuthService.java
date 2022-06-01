@@ -1,15 +1,14 @@
 package com.acedia.uthorization.service;
 
-import com.accedia.apple.auth.AppleAuthProvider;
-import com.accedia.apple.auth.AppleUserScope;
-import com.accedia.apple.auth.SecretGenerator;
-import com.accedia.apple.auth.key.AppleClientPrivateKeyFactory;
-import com.accedia.apple.auth.user.AppleAuthorizationToken;
+import com.acedia.uthorization.auth.AppleAuthProvider;
+import com.acedia.uthorization.auth.AppleUserScope;
+import com.acedia.uthorization.auth.SecretGenerator;
+import com.acedia.uthorization.auth.key.AppleClientPrivateKeyFactory;
+import com.acedia.uthorization.auth.user.AppleAuthorizationToken;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayInputStream;
+
 import java.io.IOException;
-import java.io.InputStream;
 import java.security.interfaces.ECPrivateKey;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
@@ -41,10 +40,10 @@ public class AuthService {
     public AuthService() throws IOException, InvalidKeySpecException {
     }
 
-    public AppleAuthorizationToken test(String code) throws IOException {
-        String authCode = "the code in the callback request";
+    public AppleAuthorizationToken test(String authCode) throws IOException {
         AppleAuthorizationToken initialToken = appleAuthProvider.makeNewAuthorisationTokenRequest(authCode);
-        return appleAuthProvider.makeNewRefreshTokenRequest(initialToken.getRefreshToken());
+        return appleAuthProvider.makeNewRefreshTokenRequest(initialToken
+                                                                    .getRefreshToken());
     }
 
 }
